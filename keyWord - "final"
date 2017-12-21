@@ -1,0 +1,8 @@
+final修饰class时候，该类不能被继承；
+final修饰成员变量或方法时候，可以继承并使用，但是不能改写；
+
+java访问权限：
+public - 公开的，权限最大
+protected - 
+包访问权限 - 
+private - 私有的
