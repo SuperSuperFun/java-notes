@@ -1,0 +1,18 @@
+step1: 新建一个本地文件夹，也可以使用git bash命令mkdir(举例mkdir test)；
+step2: 打开test文件夹 cd test；
+step3: 使用git命令 git init 把这个文件夹变成git可管理的仓库(test文件夹里会多出一个.git文件，若看不到则被隐藏了)；
+step4: 把你要上传的project项目复制粘贴到test文件夹中来，粘贴后可通过git status来查看当前的状态；
+step5: 使用git add命令将项目添加到本地git仓库，(也可以使用git add .把该目录下所有文件添加到仓库，.是空格隔开的)；
+step6: 使用git commit将项目提交到仓库，(git commit -m "first commit") m后面是注释内容；
+step7: 创建ssh key。先看用户目录下.ssh文件夹里有没有id_rsa和id_rsa.pub这两个文件，有就跳到下一步，没有就通过以下
+       命令创建：ssh-keygen -t rsa -C "youremail@example.com"，然后回车会在.ssh目录下找到id_rsa/id_rsa.pub；
+step8: 登录github，点击右上角图标，选择"Settings"，再选择"SSH and GPG keys"，点击右上角"new SSH keys"，title
+       随便填，把刚才id_rsa.pub里面的内容复制到key内容框，最后点击"Add SSH key"，这样便完成了SSH Key的加密；
+step9: 在github上创建一个git仓库，比如我新建的仓库地址是"https://github.com/SuperSuperFun/springMVC-redis.git"；
+step10: 本地关联远程仓库，例如：git remote add origin https://github.com/SuperSuperFun/springMVC-redis.git；
+        origin后面接你新建的远程仓库地址；
+step11: 关联好后可以开始推送 git push -u origin master，由于新建的仓库是空的，所以要加上-u这个参数，等仓库有了内容，
+        下次可以直接git push origin master；
+step12: 等待推送完成后，刷新github可以看到新建的仓库里有我们推送过来的项目
+
+注意：若在github上新建项目时候自动创建了README文件，则推送会报错，可通过命令git pull --rebase origin master解决。
